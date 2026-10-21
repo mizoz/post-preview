@@ -1,0 +1,32 @@
+# Post Preview
+
+> Free, browser-only tool that previews one social media post as it would look on LinkedIn, X, Instagram, Threads, Facebook and Bluesky, with each network's character limit, X's weighted character count, and the approximate point where "see more" cuts the post on mobile and desktop. No sign-up, nothing is uploaded.
+
+URL: https://mizoz.github.io/post-preview/
+
+## Key facts (checked October 2026)
+
+| Network | Post limit | How it counts | Approx. "see more" cut (mobile / desktop) |
+|---|---|---|---|
+| LinkedIn | 3,000 | characters | ~140 chars or 3 lines / ~210 chars or 3 lines |
+| X | 280 (25,000 with Premium) | weighted: emoji and CJK = 2, every URL = 23 | none under 280; Premium long posts fold at ~280 |
+| Instagram caption | 2,200 | characters; max 5 hashtags (rolling out since late 2025) | ~125 chars or 2 lines |
+| Threads | 500 (+ 10,000 text attachment) | characters, emoji = UTF-8 bytes (usually 4); 1 topic tag per post | usually shows the whole post |
+| Facebook | 63,206 | characters | ~125 chars / ~477 chars |
+| Bluesky | 300 | graphemes (max 3,000 bytes) | shows the whole post |
+
+See-more cutoffs are not published by the platforms; they are observed and approximate.
+
+## Features
+
+- Side-by-side previews, mobile and desktop widths
+- X weighted counting matching the twitter-text rules
+- Emoji counted by grapheme (what you see) on other networks
+- Hook checker showing the text visible before the cut
+- Hashtag, mention, link and emoji counts
+- Unicode bold/italic styler with an accessibility warning
+- Drafts saved locally, copy per network, share link
+
+## Author
+
+Ahmed Mahmoud, Calgary, Alberta. Founder of FirstShow (https://firstshow.ca). Builds free web tools for marketers, event and comms teams. https://mizoz.github.io/
