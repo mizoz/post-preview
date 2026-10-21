@@ -1,6 +1,6 @@
 # Post Preview
 
-**Live: https://mizoz.github.io/post-preview/**
+**Live: https://lab.zalastack.com/post-preview/**
 
 Write a post once and see it as a LinkedIn, X, Instagram, Threads, Facebook and Bluesky post side by side, with the character count against each limit and roughly where the "see more" cut lands.
 
@@ -70,6 +70,6 @@ The "see more" numbers come from observed behaviour reported by the sources abov
 
 ## License
 
-MIT. Made by [Ahmed Mahmoud](https://mizoz.github.io/) in Calgary.
+MIT. Made by [Ahmed Mahmoud](https://lab.zalastack.com/) in Calgary.
 
-Other free tools: [social image sizer](https://mizoz.github.io/social-image-sizer/) · [UTM builder](https://mizoz.github.io/utm-builder/) · [sponsorship builder](https://mizoz.github.io/sponsorship-builder/) · [stream calculator](https://mizoz.github.io/stream-calc/)
+Other free tools: [social image sizer](https://lab.zalastack.com/social-image-sizer/) · [UTM builder](https://lab.zalastack.com/utm-builder/) · [sponsorship builder](https://lab.zalastack.com/sponsorship-builder/) · [stream calculator](https://lab.zalastack.com/stream-calc/)

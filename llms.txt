@@ -2,7 +2,7 @@
 
 > Free, browser-only tool that previews one social media post as it would look on LinkedIn, X, Instagram, Threads, Facebook and Bluesky, with each network's character limit, X's weighted character count, and the approximate point where "see more" cuts the post on mobile and desktop. No sign-up, nothing is uploaded.
 
-URL: https://mizoz.github.io/post-preview/
+URL: https://lab.zalastack.com/post-preview/
 
 ## Key facts (checked October 2026)
 
@@ -29,4 +29,4 @@ See-more cutoffs are not published by the platforms; they are observed and appro
 
 ## Author
 
-Ahmed Mahmoud, Calgary, Alberta. Founder of FirstShow (https://firstshow.ca). Builds free web tools for marketers, event and comms teams. https://mizoz.github.io/
+Ahmed Mahmoud, Calgary, Alberta. Founder of FirstShow (https://firstshow.ca). Builds free web tools for marketers, event and comms teams. https://lab.zalastack.com/

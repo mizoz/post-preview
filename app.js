@@ -10,7 +10,7 @@
     '→ Put the point in the first sentence\n' +
     '→ Cut the warm-up ("I\'ve been thinking a lot about...")\n' +
     '→ Use line breaks, but not after every three words\n\n' +
-    'Check yours before you post: mizoz.github.io/post-preview 👀\n\n' +
+    'Check yours before you post: lab.zalastack.com/post-preview 👀\n\n' +
     '#writingtips #linkedin';
 
   function load(k, d) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }
