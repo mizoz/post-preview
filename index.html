@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LinkedIn Post Preview &amp; Social Media Character Counter</title>
+<meta name="description" content="Free LinkedIn post preview and character counter for X, Instagram, Threads, Facebook and Bluesky. See the see-more cutoff before you post.">
+<link rel="canonical" href="https://mizoz.github.io/post-preview/">
+<meta name="theme-color" content="#f6f7f9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14161a" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Post Preview: LinkedIn post preview and social character counter">
+<meta property="og:description" content="Write once, see it on LinkedIn, X, Instagram, Threads, Facebook and Bluesky, with limits and see-more cutoffs.">
+<meta property="og:url" content="https://mizoz.github.io/post-preview/">
+<meta property="og:image" content="https://mizoz.github.io/post-preview/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Post Preview: LinkedIn post preview and social character counter">
+<meta name="twitter:description" content="Write once, see it on six networks, with character limits and see-more cutoffs. Free, no sign-up.">
+<meta name="twitter:image" content="https://mizoz.github.io/post-preview/og.png">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Post Preview",
+      "url": "https://mizoz.github.io/post-preview/",
+      "description": "Preview a social post on LinkedIn, X, Instagram, Threads, Facebook and Bluesky, with character limits and see-more cutoffs.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CAD"},
+      "datePublished": "2026-10-21",
+      "author": {"@type":"Person","name":"Ahmed Mahmoud","url":"https://mizoz.github.io/","jobTitle":"Founder, FirstShow","address":{"@type":"PostalAddress","addressLocality":"Calgary","addressRegion":"AB","addressCountry":"CA"},"sameAs":["https://github.com/mizoz","https://www.linkedin.com/in/ahmed-m-82ba28169/","https://firstshow.ca"]}
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to preview a social media post before you publish",
+      "step": [
+        {"@type": "HowToStep", "name": "Write", "text": "Type or paste your post in the box. Line breaks and emoji are kept."},
+        {"@type": "HowToStep", "name": "Check the counts", "text": "Each preview shows its count against that network's limit, plus hashtags, mentions and emoji."},
+        {"@type": "HowToStep", "name": "Check the fold", "text": "Switch between mobile and desktop to see where the see-more cut lands, and read your hook in the hook checker."},
+        {"@type": "HowToStep", "name": "Copy", "text": "Use the copy button on the network you're posting to, then paste it into the app."}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"What is the LinkedIn post character limit in 2026?","acceptedAnswer":{"@type":"Answer","text":"3,000 characters for a normal post, spaces and line breaks included. Only about the first 140 characters show on mobile and about 210 on desktop before the see-more link, and fewer if you use short lines."}},
+        {"@type":"Question","name":"How does X (Twitter) count characters?","acceptedAnswer":{"@type":"Answer","text":"X uses a weighted count with a 280 limit. Most Latin letters, numbers and punctuation count as 1. Emoji, Chinese, Japanese and Korean characters and most other symbols count as 2. Every link counts as 23 no matter how long it is. This tool uses the same weighting rules as X's open-source twitter-text library."}},
+        {"@type":"Question","name":"How long can an Instagram caption be?","acceptedAnswer":{"@type":"Answer","text":"2,200 characters. The feed shows roughly the first 125 characters, about two lines, before the more link. Instagram also began limiting posts to 5 hashtags in late 2025."}},
+        {"@type":"Question","name":"Where exactly does the see more cut happen?","acceptedAnswer":{"@type":"Answer","text":"No network publishes it, and it changes with screen width, font size and app version. The cutoffs here are approximate, based on observed behaviour in 2026: a character budget plus a line budget, whichever runs out first."}},
+        {"@type":"Question","name":"Is it a good idea to use bold or italic text on LinkedIn?","acceptedAnswer":{"@type":"Answer","text":"Use it sparingly. The bold and italic letters are actually math symbols, so screen readers may read them letter by letter or skip them, and they don't show up in search. Keep them off names, keywords and anything important."}},
+        {"@type":"Question","name":"Why does my emoji count as 2 on some counters?","acceptedAnswer":{"@type":"Answer","text":"Many emoji are stored as two or more code units, and skin tones or families join several together. This tool counts what you see (a grapheme) as one, except on X, where every emoji counts as 2, and Threads, whose docs count an emoji as its UTF-8 bytes (usually 4)."}},
+        {"@type":"Question","name":"Does this tool save or send my post anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Everything runs in your browser. Drafts, your name and photo are saved only in your browser's local storage, and you can delete them any time."}},
+        {"@type":"Question","name":"What are the Threads and Bluesky character limits?","acceptedAnswer":{"@type":"Answer","text":"Threads allows 500 characters per post, plus an optional text attachment of up to 10,000. Threads' developer docs count each emoji as its UTF-8 bytes, so a typical emoji uses 4. Bluesky allows 300 graphemes per post."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#composer">Skip to the editor</a>
+<header class="top">
+  <div class="wrap">
+    <h1>LinkedIn post preview &amp; social media character counter</h1>
+    <p class="lede">Write a post once and see roughly how it looks on LinkedIn, X, Instagram, Threads, Facebook and Bluesky, with the character count, the limit and where the "see more" cut lands. Nothing leaves your browser.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="tool" aria-label="Post editor and previews">
+    <div class="editor card">
+      <div class="row between">
+        <label for="composer" class="lbl">Your post</label>
+        <div class="row gap-s">
+          <button type="button" class="btn ghost small" id="btnExample">Load example</button>
+          <button type="button" class="btn ghost small" id="btnClear">Clear</button>
+        </div>
+      </div>
+      <div class="fmt" role="toolbar" aria-label="Text styling">
+        <button type="button" class="btn small" data-style="bold" title="Bold the selected text"><span aria-hidden="true">𝗕</span> Bold</button>
+        <button type="button" class="btn small" data-style="italic" title="Italicize the selected text"><span aria-hidden="true">𝘐</span> Italic</button>
+        <button type="button" class="btn small" data-style="bolditalic" title="Bold italic"><span aria-hidden="true">𝙱𝙸</span> Bold italic</button>
+        <button type="button" class="btn small" data-style="plain" title="Turn styled letters back into normal text">Plain</button>
+        <span class="hint" id="fmtHint">Select some text first.</span>
+      </div>
+      <textarea id="composer" rows="9" spellcheck="true" placeholder="Start with the line you want people to read before they hit 'see more'…"></textarea>
+      <p class="warn" id="fancyWarn" hidden>Heads up: styled letters are really math symbols. Screen readers can read them letter by letter or skip them, and search won't match them. Keep them off names and key words.</p>
+      <div class="stats" id="stats" aria-live="polite"></div>
+
+      <details class="profile">
+        <summary>Name and photo for the preview (optional)</summary>
+        <div class="grid2">
+          <div class="field">
+            <label for="pName">Display name</label>
+            <input id="pName" type="text" autocomplete="off" placeholder="Your Name">
+          </div>
+          <div class="field">
+            <label for="pHandle">Handle</label>
+            <input id="pHandle" type="text" autocomplete="off" placeholder="yourhandle">
+          </div>
+          <div class="field">
+            <label for="pHeadline">Headline (LinkedIn)</label>
+            <input id="pHeadline" type="text" autocomplete="off" placeholder="What you do">
+          </div>
+          <div class="field">
+            <label for="pPhoto">Photo</label>
+            <input id="pPhoto" type="file" accept="image/*">
+            <button type="button" class="btn ghost small" id="btnNoPhoto" hidden>Remove photo</button>
+          </div>
+        </div>
+        <p class="hint">The photo is shrunk and kept in this browser only.</p>
+      </details>
+
+      <div class="drafts">
+        <div class="row between">
+          <h2 class="h3">Drafts</h2>
+          <div class="row gap-s">
+            <button type="button" class="btn small" id="btnSave">Save draft</button>
+            <button type="button" class="btn ghost small" id="btnShare">Copy share link</button>
+          </div>
+        </div>
+        <ul id="draftList" class="draft-list"></ul>
+        <p class="hint" id="draftEmpty">No drafts yet. Saved drafts stay in this browser.</p>
+      </div>
+    </div>
+
+    <div class="controls row between">
+      <fieldset class="seg" aria-label="Preview size">
+        <legend class="sr">Preview size</legend>
+        <input type="radio" name="device" id="dMobile" value="mobile" checked><label for="dMobile">Mobile</label>
+        <input type="radio" name="device" id="dDesktop" value="desktop"><label for="dDesktop">Desktop</label>
+      </fieldset>
+      <label class="check"><input type="checkbox" id="xPremium"> X Premium (25,000 limit)</label>
+    </div>
+
+    <p class="note">These are look-alike mockups, not the real apps, and they aren't affiliated with any of these companies. "See more" cutoffs are approximate. Networks don't publish them and they shift with screen size and app updates.</p>
+
+    <div class="previews" id="previews"></div>
+
+    <section class="hook card" aria-labelledby="hookH">
+      <h2 id="hookH">Hook checker: what people see before "see more"</h2>
+      <p class="hint">Exactly the text that should be visible before the cut, per network. If the point of your post isn't in here, most people won't get to it.</p>
+      <div id="hooks" class="hooks"></div>
+    </section>
+  </section>
+
+  <article class="content">
+    <h2>How to use it</h2>
+    <ol>
+      <li>Type or paste your post. Line breaks, emoji and spacing are kept as you typed them.</li>
+      <li>Watch the counter on each preview. It turns amber near the limit and red when you're over.</li>
+      <li>Flip between Mobile and Desktop to see where the cut lands. Click "see more" on a preview to expand it.</li>
+      <li>Read the hook checker. That's your real headline on each network.</li>
+      <li>Hit Copy on the network you're posting to and paste it into the app.</li>
+    </ol>
+
+    <h2 id="limits">Social media character limits 2026</h2>
+    <div class="table-wrap">
+      <table>
+        <caption>Post limits and approximate "see more" cutoffs, checked October 2026</caption>
+        <thead>
+          <tr><th scope="col">Network</th><th scope="col">Post limit</th><th scope="col">How it counts</th><th scope="col">Cut on mobile (approx.)</th><th scope="col">Cut on desktop (approx.)</th><th scope="col">Hashtags</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">LinkedIn</th><td>3,000</td><td>Characters, spaces and line breaks included</td><td>~140 chars or 3 lines</td><td>~210 chars or 3 lines</td><td>No hard cap, 3 to 5 recommended</td></tr>
+          <tr><th scope="row">X</th><td>280 (25,000 with Premium)</td><td>Weighted: emoji and CJK = 2, links = 23</td><td>None under 280; Premium posts fold at ~280</td><td>Same</td><td>Count toward 280</td></tr>
+          <tr><th scope="row">Instagram caption</th><td>2,200</td><td>Characters</td><td>~125 chars or 2 lines</td><td>~125 chars or 2 lines</td><td>5 per post (rolling out since late 2025)</td></tr>
+          <tr><th scope="row">Threads</th><td>500 (+ 10,000 text attachment)</td><td>Characters; each emoji counts as its UTF-8 bytes (usually 4)</td><td>Usually shows the whole post</td><td>Usually shows the whole post</td><td>1 topic tag per post</td></tr>
+          <tr><th scope="row">Facebook</th><td>63,206</td><td>Characters</td><td>~125 chars or 5 lines</td><td>~477 chars or 6 lines</td><td>No hard cap</td></tr>
+          <tr><th scope="row">Bluesky</th><td>300</td><td>Graphemes (and max 3,000 bytes)</td><td>Shows the whole post</td><td>Shows the whole post</td><td>Count toward 300</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="x">Twitter character counter: how X counts</h2>
+    <p>X doesn't count characters one by one. It uses a weighted count from its open-source twitter-text library, and this tool uses the same rules:</p>
+    <ul>
+      <li>Latin letters, numbers, most punctuation, smart quotes and dashes count as 1.</li>
+      <li>Every emoji counts as 2, even a family or a flag built from several pieces.</li>
+      <li>Chinese, Japanese and Korean characters count as 2. So do the "bold" and "italic" letters from the styler above, which is a sneaky way to run out of room.</li>
+      <li>Every link counts as 23, because X wraps them in t.co. A short link doesn't save you anything.</li>
+      <li>Text is normalized first, so an accented letter counts as 1 however it was typed.</li>
+    </ul>
+    <p>One small gap: X recognizes bare links like <code>example.com</code> against the full list of domain endings. I only check the common ones (.com, .ca, .io, .org and so on), so an odd one like <code>.museum</code> without <code>https://</code> gets counted as plain text here.</p>
+
+    <h2 id="instagram">Instagram caption length</h2>
+    <p>The limit is 2,200 characters, but the feed only shows about two lines (roughly 125 characters) before "more". Front-load the point. Hashtags count toward the 2,200, and Instagram began capping posts at 5 hashtags in late 2025. Some accounts still see the old limit of 30, so the counter warns you past 5 rather than blocking.</p>
+
+    <h2 id="linkedin">LinkedIn post preview: the 210 character problem</h2>
+    <p>LinkedIn gives you 3,000 characters and then hides almost all of them. On desktop you get about 210 characters or three lines, on a phone closer to 140. Short punchy lines eat the line budget fast: three one-liners and a blank line and you're cut off at 60 characters. The preview uses both a character budget and a line budget so you can see that happen.</p>
+
+    <h2 id="faq">FAQ</h2>
+    <div class="faq">
+      <details><summary>What is the LinkedIn post character limit in 2026?</summary><p>3,000 characters for a normal post, spaces and line breaks included. Only about the first 140 characters show on mobile and about 210 on desktop before the see-more link, and fewer if you use short lines.</p></details>
+      <details><summary>How does X (Twitter) count characters?</summary><p>X uses a weighted count with a 280 limit. Most Latin letters, numbers and punctuation count as 1. Emoji, Chinese, Japanese and Korean characters and most other symbols count as 2. Every link counts as 23 no matter how long it is. This tool uses the same weighting rules as X's open-source twitter-text library.</p></details>
+      <details><summary>How long can an Instagram caption be?</summary><p>2,200 characters. The feed shows roughly the first 125 characters, about two lines, before the more link. Instagram also began limiting posts to 5 hashtags in late 2025.</p></details>
+      <details><summary>Where exactly does the see more cut happen?</summary><p>No network publishes it, and it changes with screen width, font size and app version. The cutoffs here are approximate, based on observed behaviour in 2026: a character budget plus a line budget, whichever runs out first.</p></details>
+      <details><summary>Is it a good idea to use bold or italic text on LinkedIn?</summary><p>Use it sparingly. The bold and italic letters are actually math symbols, so screen readers may read them letter by letter or skip them, and they don't show up in search. Keep them off names, keywords and anything important.</p></details>
+      <details><summary>Why does my emoji count as 2 on some counters?</summary><p>Many emoji are stored as two or more code units, and skin tones or families join several together. This tool counts what you see (a grapheme) as one, except on X, where every emoji counts as 2, and Threads, whose docs count an emoji as its UTF-8 bytes (usually 4).</p></details>
+      <details><summary>Does this tool save or send my post anywhere?</summary><p>No. Everything runs in your browser. Drafts, your name and photo are saved only in your browser's local storage, and you can delete them any time.</p></details>
+      <details><summary>What are the Threads and Bluesky character limits?</summary><p>Threads allows 500 characters per post, plus an optional text attachment of up to 10,000. Threads' developer docs count each emoji as its UTF-8 bytes, so a typical emoji uses 4. Bluesky allows 300 graphemes per post.</p></details>
+    </div>
+
+    <h2>Privacy</h2>
+    <p>No accounts, no analytics, no cookies. Your post, drafts, name and photo stay in this browser's local storage. The share link puts the post text in the part of the URL after <code>#</code>, which browsers don't send to the server.</p>
+    <p class="updated">Last updated October 2026.</p>
+  </article>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>Made by <a href="https://mizoz.github.io/">Ahmed Mahmoud in Calgary</a>. Free, no sign-up. <a href="https://github.com/mizoz/post-preview">Source on GitHub</a>.</p>
+    <p class="more-tools">More free tools:
+      <a href="https://mizoz.github.io/social-image-sizer/">Social image sizer</a> ·
+      <a href="https://mizoz.github.io/utm-builder/">UTM builder</a> ·
+      <a href="https://mizoz.github.io/sponsorship-builder/">Sponsorship builder</a> ·
+      <a href="https://mizoz.github.io/stream-calc/">Stream calculator</a>
+    </p>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="count.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
